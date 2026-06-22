@@ -302,14 +302,68 @@
         }
 
         @media (max-width: 600px) {
-            .container { padding: 25px 18px; }
-            h1 { font-size: 2rem; }
-            .q-text { font-size: 1.2rem; }
-            .btn { padding: 14px 28px; font-size: 1.1rem; }
-            .option { padding: 12px 18px; font-size: 0.95rem; }
-            .result-title { font-size: 1.8rem; }
-            .input-field input { width: 65px; padding: 8px 10px; }
+        .container {
+            padding: 20px 16px;
+            border-radius: 32px;
         }
+        h1 {
+            font-size: 2rem;
+        }
+        .subtitle {
+            font-size: 1rem;
+            padding: 8px 16px;
+        }
+        .title-desc {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        .q-text {
+            font-size: 1.2rem;
+            margin-bottom: 18px;
+        }
+        .option {
+            padding: 16px 20px;
+            font-size: 1rem;
+            border-radius: 40px;
+        }
+        .input-field input {
+            width: 70px;
+            padding: 12px 8px;
+            font-size: 1.1rem;
+        }
+        .btn {
+            padding: 14px 32px;
+            font-size: 1.2rem;
+            width: 100%;
+            max-width: 300px;
+        }
+        .btn-center {
+            margin-top: 16px;
+        }
+        .result-title {
+            font-size: 1.8rem;
+        }
+        .result-comment {
+            font-size: 1rem;
+            padding: 10px 16px;
+        }
+        .result-image img {
+            max-height: 200px;
+        }
+        .final-score {
+            font-size: 2.5rem;
+        }
+        .final-message {
+            font-size: 1.1rem;
+        }
+        .question-hint {
+            font-size: 0.9rem;
+            margin-top: 12px;
+        }
+        .q-number {
+            font-size: 0.8rem;
+        }
+    }
     </style>
 </head>
 <body>
@@ -330,9 +384,9 @@
                 <span class="subtitle">✨ 10 вопросов о нас ✨</span>
             </div>
             <div class="title-desc">
-                Привет, моя любимая! <br>
+                Привет, моё солнышко! <br>
                 Я подготовил для тебя 10 вопросов о нас. <br>
-                Отвечай честно, и в конце узнаешь результат! ❤️
+                Отвечай как знаешь, и в конце узнаешь результат! ❤️
             </div>
             <div class="btn-center">
                 <button class="btn" id="startBtn">Начать тест 🌸</button>
@@ -392,40 +446,107 @@
                     { label: 'Год', placeholder: 'ГГГГ' }
                 ],
                 correctValues: ['01', '12', '2023'],
-                correctComment: 'Да, это тот самый день! ❤️',
-                wrongComment: 'Ой, а я думал, что мы встретились именно тогда... Но ничего, главное, что мы вместе!'
+                correctComment: 'Ты моя бусечка))) Я очень счастлив что встретил тебя тогда! ❤️',
+                wrongComment: 'ЭТО ЧТО ЗА ДЕЛААААААА? Ты мне этот вопрос миллион раз задавала, и сама на нем провалилась?? НА ПЕРЕСДАЧУ!'
             },
             {
-                type: 'choice',
-                question: "Какой у нас с тобой самый любимый совместный фильм?",
-                options: ["Романтическая комедия", "Фэнтези", "Драма", "Мы смотрим всё подряд"],
-                correct: 3,
-                correctComment: 'Точно! Мы любим смотреть всё подряд и обсуждать! 🍿',
-                wrongComment: 'Ну, может, в следующий раз угадаешь 😉'
+                type: 'input',   // 'input' или 'choice'
+                question: "Когда вы пришли ко мне в гости, прогуляв школу?",
+                fields: [
+                    { label: 'День', placeholder: 'ДД' },
+                    { label: 'Месяц', placeholder: 'ММ' },
+                    { label: 'Год', placeholder: 'ГГГГ' }
+                ],
+                correctValues: ['27', '12', '2023'],
+                correctComment: 'Гостинство ваше конечно закончилось не очень положительно, но я помню как колотилось моё сердце тогда. Я очень переживал)😅',
+                wrongComment: 'Прогульщица, даже не помнишь когда прогуляла))))'
             },
             {
-                type: 'choice',
-                question: "Что я люблю в тебе больше всего?",
-                options: ["Твою улыбку", "Твой смех", "Твои глаза", "Твою доброту"],
-                correct: 2,
-                correctComment: 'Да, твои глаза завораживают меня каждый день ✨',
-                wrongComment: 'На самом деле всё перечисленное, но глаза — особенно!'
+                type: 'input',   // 'input' или 'choice'
+                question: "Когда мы болтали на лавочке? В школе тем самым вечером",
+                fields: [
+                    { label: 'День', placeholder: 'ДД' },
+                    { label: 'Месяц', placeholder: 'ММ' },
+                    { label: 'Год', placeholder: 'ГГГГ' }
+                ],
+                correctValues: ['28', '12', '2023'],
+                correctComment: 'Я не помню о чем мы болтали, но я помню свои ощущения. Тогда я понимал что я всё сильнее и сильнее влюбляюсь💘',
+                wrongComment: 'УЖСУЖС, ну ладно, мне кажется мы бы это тоже не вспомнили'
             },
             {
-                type: 'choice',
-                question: "Наше идеальное свидание — это...",
-                options: ["Уютный ужин при свечах", "Прогулка по парку", "Кино и попкорн", "Путешествие"],
-                correct: 0,
-                correctComment: 'Уютный ужин — это наша классика ❤️',
-                wrongComment: 'Мы любим всё, но ужин при свечах — особенно!'
+                type: 'input',   // 'input' или 'choice'
+                question: "Какого числа и сколько роз было в самом первом букетике?",
+                fields: [
+                    { label: 'День', placeholder: 'ДД' },
+                    { label: 'Месяц', placeholder: 'ММ' },
+                    { label: 'Месяц', placeholder: 'ГГГГ' },
+                    { label: 'Год', placeholder: 'ЧИСЛО' }
+                ],
+                correctValues: ['20', '05', '2024', '7'],
+                correctComment: 'Всё пошло не по плану, но мы сумели выкрутиться) Помню как стоял на колени перед вами, а вы от меня отворачивались😁',
+                wrongComment: 'К сожалению я не могу узнать на что именно ты неправильно ответила, но это надо помнить ващет)))'
             },
             {
-                type: 'choice',
-                question: "Какое блюдо я готовлю лучше всего?",
-                options: ["Паста", "Салат", "Десерт", "Я вообще не готовлю, но люблю твои"],
-                correct: 2,
-                correctComment: 'Ты обожаешь мои десерты! 😋',
-                wrongComment: 'Ну, может, я и не мастер, но стараюсь!'
+                type: 'input',   // 'input' или 'choice'
+                question: "Ну так, вопросик отдохнуть. Когда мы начали отношения?",
+                fields: [
+                    { label: 'День', placeholder: 'ДД' },
+                    { label: 'Месяц', placeholder: 'ММ' },
+                    { label: 'Год', placeholder: 'ГГГГ' }
+                ],
+                correctValues: ['03', '07', '2024'],
+                correctComment: 'ОХХХХХХХХХХХХХХХХХ, КАК МЫ ТОГДА ПЕРЕЖИВАЛИ. Я очень рад что все вышло как вышло))❤️',
+                wrongComment: 'УЖАС УЖАААААААААААС. ПРЕДАТЕЛЬСТВО, ИЗМЕНАААААААА!!!!'
+            },
+            {
+                type: 'input',   // 'input' или 'choice'
+                question: "Как назывался цветок из которого состоял букет перед моим уездом в январе 2025",
+                fields: [
+                    { label: 'Год', placeholder: 'РОЗА' }
+                ],
+                correctValues: ['Хризнтема'],
+                correctComment: 'ДАА, розовые хризантемки))) Милота была)❤️',
+                wrongComment: 'Либо вы не правильно ответили, либо мы перепутали название цветов. В любом случае, ответ НЕВЕРНЫЙ.'
+            },
+            {
+                type: 'input',   // 'input' или 'choice'
+                question: "Сериальчик который нас сблизил (2025)",
+                fields: [
+                    { label: 'Год', placeholder: 'НАЗВАНИЕ' }
+                ],
+                correctValues: ['Аркейн'],
+                correctComment: 'Как же я был счастлив обнимая вас)))❤️',
+                wrongComment: 'Невнимательно смотрели, да🤨'
+            },
+            {
+                type: 'input',   // 'input' или 'choice'
+                question: "Сериальчик который нас ОЧЕНЬ сблизил (2026)",
+                fields: [
+                    { label: 'Год', placeholder: 'НАЗВАНИЕ' }
+                ],
+                correctValues: ['Киберкраш'],
+                correctComment: 'Что было в 1 серии?...',
+                wrongComment: 'Ну и правильно, название особо не важно, хехехе)'
+            },
+            {
+                type: 'input',   // 'input' или 'choice'
+                question: "Что я обязан этим летом приготовить?",
+                fields: [
+                    { label: 'Год', placeholder: 'Блюдо' }
+                ],
+                correctValues: ['Карпаччо'],
+                correctComment: 'С помидорками))) надо надо))) хихик',
+                wrongComment: 'А теперь может и не обязан))))'
+            },
+            {
+                type: 'input',   // 'input' или 'choice'
+                question: "Вы меня любите?)",
+                fields: [
+                    { label: 'Год', placeholder: 'Да' }
+                ],
+                correctValues: ['Да'],
+                correctComment: 'И я тебя люблблю, солнышко моё🥹❤️❤️❤️',
+                wrongComment: 'А неважно, я итак знаю что да)'
             }
             // ---- ДОБАВЬТЕ ОСТАЛЬНЫЕ 5 ВОПРОСОВ ПО АНАЛОГИИ ----
         ];
