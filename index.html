@@ -399,7 +399,7 @@
             <div class="q-text" id="qText">Текст вопроса</div>
             <div id="questionContent"></div>
             <!-- Подпись под вопросом -->
-            <div class="question-hint">✨ начнем с легкого ✨</div>
+            <div class="question-hint">❤️ Я тебя люблю ❤️</div>
             <div class="btn-center" id="submitAnswerWrap" style="display: none;">
                 <button class="btn" id="submitAnswerBtn">Ответить 💕</button>
             </div>
@@ -424,7 +424,7 @@
             <h1 style="font-size: 2.2rem;">💞 Ты справилась!</h1>
             <div class="final-score" id="finalScore">10 / 10</div>
             <div class="final-message" id="finalMessage">
-                Ты — моя идеальная! ❤️
+                Ты — самая лучшая девушка! ❤️
             </div>
             <div class="btn-center" style="margin-top: 25px;">
                 <button class="btn" id="restartBtn">Пройти ещё раз 🌷</button>
@@ -479,8 +479,8 @@
                 fields: [
                     { label: 'День', placeholder: 'ДД' },
                     { label: 'Месяц', placeholder: 'ММ' },
-                    { label: 'Месяц', placeholder: 'ГГГГ' },
-                    { label: 'Год', placeholder: 'ЧИСЛО' }
+                    { label: 'Год', placeholder: 'ГГГГ' },
+                    { label: 'Число', placeholder: 'ЧИСЛО' }
                 ],
                 correctValues: ['20', '05', '2024', '7'],
                 correctComment: 'Всё пошло не по плану, но мы сумели выкрутиться) Помню как стоял на колени перед вами, а вы от меня отворачивались😁',
@@ -504,13 +504,13 @@
                 fields: [
                     { label: 'Год', placeholder: 'РОЗА' }
                 ],
-                correctValues: ['Хризнтема'],
+                correctValues: ['Хризантема'],
                 correctComment: 'ДАА, розовые хризантемки))) Милота была)❤️',
                 wrongComment: 'Либо вы не правильно ответили, либо мы перепутали название цветов. В любом случае, ответ НЕВЕРНЫЙ.'
             },
             {
                 type: 'input',   // 'input' или 'choice'
-                question: "Сериальчик который нас сблизил (2025)",
+                question: "Сериальчик который нас сблизил (2024)",
                 fields: [
                     { label: 'Год', placeholder: 'НАЗВАНИЕ' }
                 ],
@@ -520,7 +520,7 @@
             },
             {
                 type: 'input',   // 'input' или 'choice'
-                question: "Сериальчик который нас ОЧЕНЬ сблизил (2026)",
+                question: "Сериальчик который нас ОЧЕНЬ сблизил (2025)",
                 fields: [
                     { label: 'Год', placeholder: 'НАЗВАНИЕ' }
                 ],
@@ -728,13 +728,13 @@
             const percent = (correctCount / totalQuestions) * 100;
             let message = '';
             if (percent === 100) {
-                message = '💖 Идеально! Ты знаешь меня лучше всех! Я тебя обожаю!';
+                message = '💖 Идеально! Ты справилась со всеми ответами! Я тебя обожаю!';
             } else if (percent >= 70) {
-                message = '💗 Очень хорошо! Мы так похожи! Ты — моя половинка!';
+                message = '💗 Потрясающе! Ты умничка! Я тебя очень сильно люблю!';
             } else if (percent >= 40) {
-                message = '💕 Неплохо! Нам есть что узнать друг о друге, и это прекрасно!';
+                message = '💕 Ну почти! Можете перепройти еще раз)!';
             } else {
-                message = '🌷 Не беда! Главное, что мы вместе. Давай пройдём тест ещё раз?';
+                message = '💕 Ну почти! Можете перепройти еще раз)!';
             }
             finalMessage.textContent = message;
 
